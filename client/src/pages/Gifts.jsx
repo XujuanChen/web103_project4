@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import '../css/Gifts.css'
+import Card from '../components/Card'
 
-import { useState, useEffect } from 'react';
-import Card from '../components/Card';
 
-const ViewCars = () => {
+const Gifts = () => {
+
     const [gifts, setGifts] = useState([]);
     useEffect(() => {
       const fetchGifts = async () => {
@@ -13,9 +14,10 @@ const ViewCars = () => {
       }
       fetchGifts()
     }, []);
-
+    
+    
     return (
-        <div>
+        <div className="Gifts">
             <main>
             {
                 gifts && gifts.length > 0 ?
@@ -30,8 +32,8 @@ const ViewCars = () => {
                 ) : <h3 className="noResults">{'No Gifts Yet 😞'}</h3>
             }
             </main>
-        </div>
+        </div>  
     )
 }
 
-export default ViewCars
+export default Gifts

@@ -13,7 +13,7 @@ const Navigation = () => {
                 <li><a href='/' role='button'>Customize</a></li>
                 <li><a href='/customcars' role='button'>View Cars</a></li>
             </ul>
-            
+
         </nav>
     )
 }
