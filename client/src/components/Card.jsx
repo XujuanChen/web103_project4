@@ -5,22 +5,30 @@ import '../css/Card.css'
 
 const Card = (props) => { 
     
-    const [gift, setGift] = useState({id: 0, name: "", pricepoint: "", audience: "", image: ""})
+    const [car, setCar] = useState({id: 0, name: "", price: "", exterior: "", roof:"", wheels: "", interior: ""})
 
     useEffect(() => {
-        setGift({id: props.id, name: props.name, pricepoint: props.pricepoint, audience: props.audience, image: props.image});
+        setCar({id: props.id, name: props.name, price: props.price, exterior: props.exterior, roof: props.roof, wheels: props.wheels, interior: props.interior});
     }, [props]);
 
     return (
         <div className="card">
-            <div className='top-container' style={{ backgroundImage:`url(${gift.image})`}}>
-                <Link to={'/edit/' + gift.id}><img src={more} /></Link>
-            </div>
-            <div className='bottom-container'>
-                <h3>{gift.name}</h3>
-                <p>{'Price: ' + gift.pricepoint}</p>
-                <p>{'Great For: ' + gift.audience}</p>
-                <Link to={'/gift/' + gift.id}><a>Read More →</a></Link>
+
+            <div>
+                <h3>{'🚘  ' + car.name}</h3>
+                <p>{'Price: ' + car.price}</p>
+                <p>{'Exterior: ' + car.exterior}</p>
+                <p>{'Roof: ' + car.roof}</p>
+                <p>{'Wheels: ' + car.wheels}</p>
+                <p>{'Interior: ' + car.interior}</p>
+                <div className='linksBtn'>
+                    <Link to={'/customcars/' + car.id}>
+                        <button>read more</button>
+                    </Link>
+                    <Link to={'/edit/' + car.id}>
+                        <button>edit</button>
+                    </Link>
+                </div>
             </div>
         </div>
     )

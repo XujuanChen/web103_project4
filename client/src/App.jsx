@@ -6,29 +6,14 @@ import EditCar from './pages/EditCar'
 import CreateCar from './pages/CreateCar'
 import CarDetails from './pages/CarDetails'
 import './App.css'
-// import { useState, useEffect } from 'react';
-// import Gifts from './pages/Gifts'
 
 const App = () => {
-  // const [gifts, setGifts] = useState([]);
-  // useEffect(() => {
-  //   const fetchGifts = async () => {
-  //     const response = await fetch('http://localhost:3001/gifts')
-  //     const data = await response.json()
-  //     setGifts(data)
-  //   }
-  //   fetchGifts()
-  // }, []);
 
   let element = useRoutes([
     {
       path: '/',
       element: <CreateCar title='BOLT BUCKET | Customize' />
     },
-    // {
-    //   path: "/",
-    //   element: <Gifts />
-    // },
     {
       path:'/customcars',
       element: <ViewCars title='BOLT BUCKET | Custom Cars' />

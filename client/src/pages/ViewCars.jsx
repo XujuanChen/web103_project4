@@ -1,33 +1,34 @@
 import React from 'react'
-
 import { useState, useEffect } from 'react';
 import Card from '../components/Card';
 
 const ViewCars = () => {
-    const [gifts, setGifts] = useState([]);
+    const [cars, setCars] = useState([]);
     useEffect(() => {
-      const fetchGifts = async () => {
-        const response = await fetch('http://localhost:3001/gifts')
+      const fetchCars = async () => {
+        const response = await fetch('http://localhost:3001/cars')
         const data = await response.json()
-        setGifts(data)
+        console.log(data)
+        setCars(data)
       }
-      fetchGifts()
+      fetchCars()
     }, []);
 
     return (
         <div>
             <main>
             {
-                gifts && gifts.length > 0 ?
-                gifts.map((gift,index) => 
-                    
-                   <Card id={gift.id} 
-                         image={gift.image} 
-                         name={gift.name} 
-                         pricepoint={gift.pricepoint} 
-                         audience={gift.audience} />
-
-                ) : <h3 className="noResults">{'No Gifts Yet 😞'}</h3>
+                cars && cars.length > 0 ?
+                cars.map((car) => 
+                  <Card key={car.id} id={car.id} 
+                        name={car.name} 
+                        price={car.price} 
+                        exterior={car.exterior}
+                        roof={car.roof}
+                        wheels={car.wheels}
+                        interior={car.interior}
+                        />
+                ) : <h3 className="noResults">{'No Cars Yet 😞'}</h3>
             }
             </main>
         </div>
