@@ -11,7 +11,7 @@
     --card-background-color: rgba(0, 0, 0, 0.8);
     --card-sectionning-background-color: rgba(0, 0, 0, 0.8);
     --form-element-active-border-color: var(--color);
-    --form-element-placeholder-color: gray;
+    --form-element-placeholder-color: white;
 }
 
 #root h1 {

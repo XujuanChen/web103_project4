@@ -16,11 +16,11 @@ const Card = (props) => {
 
             <div>
                 <h3>{'🚘  ' + car.name}</h3>
-                <p>{'Price: ' + car.price}</p>
-                <p>{'Exterior: ' + car.exterior}</p>
-                <p>{'Roof: ' + car.roof}</p>
-                <p>{'Wheels: ' + car.wheels}</p>
-                <p>{'Interior: ' + car.interior}</p>
+                <p>{'🚟 Price: ＄' + car.price}</p>
+                <p>{'🚋 Exterior: ' + car.exterior}</p>
+                <p>{'🎫 Roof: ' + car.roof}</p>
+                <p>{'🚜 Wheels: ' + car.wheels}</p>
+                <p>{'🚓 Interior: ' + car.interior}</p>
                 <div className='linksBtn'>
                     <Link to={'/customcars/' + car.id}>
                         <button>read more</button>

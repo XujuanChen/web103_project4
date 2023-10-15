@@ -11,8 +11,8 @@ const getCars = async (req, res) => {
 
 const getCarById = async (req, res) => {
   try {
-    const carId = req.params.carId
-    const selectQuery = `SELECT name, price, exterior, roof, wheels, interior FROM cars WHERE id = ${carId}`
+    const id = req.params.id
+    const selectQuery = `SELECT name, price, exterior, roof, wheels, interior FROM cars WHERE id = ${id}`
     const results = await pool.query(selectQuery)
 
     res.status(200).json(results.rows[0])

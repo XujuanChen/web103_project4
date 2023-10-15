@@ -8,7 +8,7 @@ const createCarsTable = async () => {
     CREATE TABLE IF NOT EXISTS cars (
       id SERIAL PRIMARY KEY,
       name VARCHAR(255) NOT NULL,
-      price VARCHAR(255) NOT NULL,
+      price INTEGER DEFAULT 0 NOT NULL,
       exterior VARCHAR(255) NOT NULL,
       roof VARCHAR(255) NOT NULL,
       wheels VARCHAR(255) NOT NULL,

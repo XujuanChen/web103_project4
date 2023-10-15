@@ -20,7 +20,8 @@ const ViewCars = () => {
             {
                 cars && cars.length > 0 ?
                 cars.map((car) => 
-                  <Card key={car.id} id={car.id} 
+                  <Card key={car.id} 
+                        id={car.id} 
                         name={car.name} 
                         price={car.price} 
                         exterior={car.exterior}
